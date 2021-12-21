@@ -1,7 +1,6 @@
 ---
 title: Exams
 author: Ben Rosenberg
-date: \today
 geometry: margin=1.0in
 toc: false
 ---

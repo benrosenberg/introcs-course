@@ -1,7 +1,6 @@
 ---
 title: "Intro CS: 7-week course"
 author: Ben Rosenberg
-date: \today
 geometry: margin=1.0in
 toc: false
 ---
