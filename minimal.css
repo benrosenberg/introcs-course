@@ -1,0 +1,21 @@
+/*h1, h2, h3, h4, h5, h6,  */
+/*h4, author, date {
+    text-align: center;
+  }*/
+  
+  body {
+    text-align: justify;
+    font-size: large;
+    margin: 4% 12% 8% 12%;
+    font-family: Monserrat, Product Sans, sans-serif;
+  }
+ 
+table, tbody, tr, thead, th, td {
+	border: 1px solid black;
+}
+
+/* #footer {
+  position: absolute;
+  bottom: 0;
+  height: 2.5rem;            // Footer height 
+} */
