@@ -1,0 +1,147 @@
+\documentclass[addpoints]{exam}
+
+\usepackage{amsmath}
+\usepackage{framed}
+\usepackage{listings}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{xcolor}
+\definecolor{darkgreen}{RGB}{27, 117, 22}
+\usepackage{fontspec}
+\header{CS XXXX}{Practice Exam 1}{NetID: \_\_\_\_\_\_\_\_}
+\footer{Prof. Ben Rosenberg}{\thepage}{\today}
+
+\lstdefinestyle{mystyle}{  
+    commentstyle=\color{gray},
+    keywordstyle=\bfseries\color{red},
+    numberstyle=\tiny\color{gray},
+    stringstyle=\color{darkgreen},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    frame=single
+}
+
+\lstset{language=Python, style=mystyle}
+
+\begin{document}
+
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering
+Answer the questions in the spaces provided. If you run out of room
+for an answer, continue on the back of the page.}}}
+\end{center}
+
+\begin{center}
+    \fbox{\gradetable[v][questions]}
+\end{center}
+    
+\begin{center}
+\vspace{5mm}
+\makebox[0.60\textwidth]{Name:\enspace\hrulefill}
+
+\vspace{5mm}
+\makebox[0.60\textwidth]{Section:\enspace\hrulefill}
+\end{center}
+
+\newpage
+
+\begin{questions}
+\question[8] Name 4 different primitive types.
+
+\vspace{\stretch{1}}
+
+\question \textbf{For loops and while loops}
+
+\begin{parts}
+
+\part[3] When should you use a while loop, and when should you use a for loop?
+
+\vspace{\stretch{1}}
+
+\part[3] In Python, you can always replace a single while loop with a single for loop, as they are functionally equivalent if used correctly. \quad \textbf{T \quad F}
+
+\vspace{\stretch{0.5}}
+
+\end{parts}
+
+
+
+\question Given the following piece of code:
+
+\begin{lstlisting}
+x1 = [ ... ]
+x2 = [ ... ]
+
+output = []
+for item1 in x1:
+    i = str(item1)
+    for item2 in x2:
+        result = i + str(item2)
+        if not result in output:
+            output.append(result)
+print(output)
+\end{lstlisting}
+
+\begin{parts}
+
+\part[7] What is printed when \texttt{x1 = [1,2,3]} and \texttt{x2 = [2,3,4]}?
+
+\vspace{\stretch{1.25}}
+
+\part[3] Describe, in no more than 3 sentences, what this code does.
+
+\vspace{\stretch{0.75}}
+
+\end{parts}
+
+\newpage
+
+\question[10] Write code that returns the minimum and maximum of a list of integers \verb+S+ with only one pass (only one loop should be used). You are \emph{not} allowed to use the functions \texttt{min} or \texttt{max} in this code (but may do so on other questions). The first line of code is given to you.
+
+\begin{verbatim}
+S = [ ... ]     # the contents of S should be irrelevant
+\end{verbatim}
+
+\vspace{\stretch{1}}
+
+\question[15] The Fibonacci numbers $F_n$ are defined in the following recursive way: $$F_n = \begin{cases} F_{n-1} + F_{n-2} & n \geq 2 \\ 1 & n = 1 \\ 0 & n = 0 \end{cases}$$
+
+For example, the first 15 Fibonacci numbers are $0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377$.
+
+Write a piece of code that uses iteration to calculate the $73^\text{rd}$ Fibonacci number and prints it out.
+
+\vspace{\stretch{1}}
+
+\newpage
+
+\question[20] \textbf{Selection sort} is a sorting algorithm that is not very efficient. For an array (i.e., a list) of $n$ elements, it takes time proportional to $n^2$ in order for selection sort to sort it correctly.
+
+The way selection sort works is by repeatedly finding the minimum element of a subset of the array and swapping it with the first element in that subset until the array is sorted. For example, consider the following array: $$[2, 4, 3, 1, 6, 5]$$
+
+On the first iteration, selection sort looks at the whole array and finds that 1 is the minimum element, so it swaps 2 and 1, giving us: $$[1, 4, 3, 2, 6, 5]$$
+
+Then, since selection sort knows that the first element is sorted, it restricts itself to the subset containing the elements $[4, 3, 2, 6, 5]$. In this subset, the minimum element is 2, so it switches 4 and 2: $$[2, 3, 4, 6, 5]$$ 
+
+It continues without switching any more elements for the next two iterations (as 3 and 4 are in their correct places) until it gets to the last two elements, which it swaps: $$[5,6]$$
+
+Expanding the view again gives us the sorted list: $$[1,2,3,4,5,6]$$
+
+Write code that performs selection sort on a list of integers \verb+S+. The first line is written for you.
+
+\begin{verbatim}
+S = [ ... ]     # the contents of S should be irrelevant
+\end{verbatim}
+
+\vspace{\stretch{1}}
+
+\end{questions}
+
+\end{document}

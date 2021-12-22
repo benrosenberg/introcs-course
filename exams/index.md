@@ -22,7 +22,7 @@ This exam will cover material that was covered before the review session on the 
 
 ## Practice materials
 
-[Practice exam 1](practice_exam_1)
+[Practice exam 1](practice_exam_1.pdf)
 
 ## Advice
 
@@ -44,6 +44,6 @@ This exam will cover material that was covered before the review session on the 
 
 ## Practice materials
 
-[Practice final exam](practice_final_exam)
+[Practice final exam](practice_final_exam.pdf)
 
 ## Advice
