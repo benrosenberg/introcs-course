@@ -5,6 +5,13 @@ geometry: margin=1.0in
 toc: false
 ---
 
+## General exam advice
+
+ - Complete the practice exams. 
+ - Look over the assignments.
+ - Look over the lecture notes.
+ - Go to the review sessions!
+
 # Exam 1
 
 ## Material covered
@@ -23,8 +30,6 @@ This exam will cover material that was covered before the review session on the 
 ## Practice materials
 
 [Practice exam 1](practice_exam_1.pdf)
-
-## Advice
 
 # Final Exam 
 
@@ -45,5 +50,3 @@ This exam will cover material that was covered before the review session on the 
 ## Practice materials
 
 [Practice final exam](practice_final_exam.pdf)
-
-## Advice

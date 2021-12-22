@@ -24,6 +24,6 @@ This is a work in progress! A list of tasks that need to be completed (or have b
     <li><input type="checkbox" disabled> assignments </li>
     <li><input type="checkbox" disabled> exams </li>
     <li><input type="checkbox" disabled> lecture notes </li>
-    <li><input type="checkbox" disabled> practice exams </li>
+    <li><input type="checkbox" checked disabled> practice exams </li>
     <li><input type="checkbox" disabled> discussion materials (labs) </li>
 </ul>
