@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (MiKTeX 21.12.10) (preloaded format=xelatex 2021.12.19)  21 DEC 2021 23:59
+This is XeTeX, Version 3.141592653-2.6-0.999993 (MiKTeX 21.12.10) (preloaded format=xelatex 2021.12.19)  22 DEC 2021 01:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/xethr/OneDrive/Documents/GitHub/introcs-course/exams/practice_exam_1.tex
-(c:/Users/xethr/OneDrive/Documents/GitHub/introcs-course/exams/practice_exam_1.tex
+**c:/Users/xethr/OneDrive/Documents/GitHub/introcs-course/exams/practice_final_exam.tex
+(c:/Users/xethr/OneDrive/Documents/GitHub/introcs-course/exams/practice_final_exam.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2021-11-22> (C:\Users\xethr\AppData\Local\Programs\MiKTeX\tex/latex/exam\exam.cls
 Document Class: exam 2021/02/26 Version 2.7 by Philip Hirschhorn
@@ -261,8 +261,8 @@ Package: fontspec-xetex 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 ) (C:\Users\xethr\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.cfg))) (C:\Users\xethr\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
-) (practice_exam_1.aux)
-\openout1 = `practice_exam_1.aux'.
+) (practice_final_exam.aux)
+\openout1 = `practice_final_exam.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
 LaTeX Font Info:    ... okay on input line 34.
@@ -378,21 +378,18 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 34.
 [1
 
-]
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <8> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 84.
- [2] [3] [4]
-This exam contains 6 questions with 4 parts, 0 subparts, and 0 subsubparts.
+] [2] [3] [4]
+This exam contains 6 questions with 10 parts, 0 subparts, and 0 subsubparts.
 This exam has a total of 69 points.
 This exam has a total of 0 bonus points.
-(practice_exam_1.aux) ) 
+(practice_final_exam.aux) ) 
 Here is how much of TeX's memory you used:
- 7376 strings out of 411044
- 158287 string characters out of 2825392
- 791585 words of memory out of 3000000
- 28009 multiletter control sequences out of 15000+600000
- 403956 words of font info for 38 fonts, out of 8000000 for 9000
+ 7243 strings out of 411044
+ 157111 string characters out of 2825392
+ 734601 words of memory out of 3000000
+ 27880 multiletter control sequences out of 15000+600000
+ 403940 words of font info for 36 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 73i,10n,77p,430b,1246s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,10n,77p,499b,302s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on practice_exam_1.xdv (4 pages, 36756 bytes).
+Output written on practice_final_exam.xdv (4 pages, 32404 bytes).

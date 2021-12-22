@@ -1,0 +1,153 @@
+\documentclass[addpoints]{exam}
+
+\usepackage{amsmath}
+\usepackage{framed}
+\usepackage{listings}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{xcolor}
+\definecolor{darkgreen}{RGB}{27, 117, 22}
+\usepackage{fontspec}
+\header{CS XXXX}{Practice Final Exam}{NetID: \_\_\_\_\_\_\_\_}
+\footer{Prof. Ben Rosenberg}{\thepage}{\today}
+
+\lstdefinestyle{mystyle}{  
+    commentstyle=\color{gray},
+    keywordstyle=\bfseries\color{red},
+    numberstyle=\tiny\color{gray},
+    stringstyle=\color{darkgreen},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    frame=single
+}
+
+\lstset{language=Python, style=mystyle}
+
+\begin{document}
+
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering
+Answer the questions in the spaces provided. If you run out of room
+for an answer, continue on the back of the page.}}}
+\end{center}
+
+\begin{center}
+    \fbox{\gradetable[v][questions]}
+\end{center}
+    
+\begin{center}
+\vspace{5mm}
+\makebox[0.60\textwidth]{Name:\enspace\hrulefill}
+
+\vspace{5mm}
+\makebox[0.60\textwidth]{Section:\enspace\hrulefill}
+\end{center}
+
+\vspace{\stretch{0.5}}
+
+\begin{questions}
+
+\question \textbf{Survey}
+
+\begin{parts}
+
+    \part[1] What was your favorite part of the class?
+
+    \vspace{\stretch{0.3}}
+
+    \part[1] What was your least favorite part of the class?
+
+    \vspace{\stretch{0.3}}
+
+    \part[1] What would you do to improve the class for future semesters?
+
+    \vspace{\stretch{0.3}}
+
+\end{parts}
+
+\newpage
+
+\question \textbf{Short answer}
+
+\begin{parts}
+
+    \part[3] Describe list comprehension, in terms of functional tools. For what tool is list comprehension syntactical sugar?
+
+    \vspace{\stretch{0.5}}
+
+    \part[3] Describe the way that \verb+reduce+ works. What kind of function does it take as a parameter?
+
+    \vspace{\stretch{0.5}}
+    
+\end{parts}
+
+\question \textbf{One-liners}
+
+\begin{parts}
+    \part[3] Using \verb+reduce+, write a one-line function to concatenate a nested list of depth 1 into a single list.
+    
+    \vspace{\stretch{0.5}}
+
+    \part[6] Write one line of code that prints out a list of the first 100 \emph{odd} squares.
+
+    \vspace{\stretch{0.5}}
+
+    \part[6] Recall that the cumulative sums of a list $L$ is another list $L_\text{cumulative}$ of length $|L|$, defined index-wise as follows: $$L_\text{cumulative}[i] = \sum_{j=0}^i L[j]$$
+    
+    Let the list from part (a) be denoted $L_a$. Write one line of code that prints out the cumulative sums of the list from part (a).
+
+    \vspace{\stretch{0.5}}
+
+\end{parts}
+
+\newpage
+
+\question[10] Recall from the previous practice exam the Fibonacci numbers, defined recursively as follows: $$F_n = \begin{cases} F_{n-1} + F_{n-2} & n \geq 2 \\ 1 & n = 1 \\ 0 & n = 0 \end{cases}$$
+
+Using only \textbf{recursion}, write an \textbf{\emph{efficient}} function to calculate the $n^\text{th}$ Fibonacci number. The function header (not necessarily the first line of code) is written for you.
+
+\begin{verbatim}
+
+
+
+
+def fib(n):
+\end{verbatim}
+
+\vspace{\stretch{1}}
+
+\question[15] Write code for a generator that yields only the squares of the Fibonacci numbers divisible by 3.
+
+\vspace{\stretch{1}}
+
+\newpage
+
+\question \textbf{Binary search} is a method of finding a certain element in a sorted list $L$. In binary search, you repeatedly divide the list in two and then determine which side the target element lies on. After partitioning $L$ in half for $\log(|L|)$ times, the target element is found. 
+
+Consider the following list: $$L = [1,2,4,7,10,15,63,72,81,94,97]$$ Say we have target element 63. First, we find the center element of 15. Since $63 > 15$, we continue on the right side: $$[63,72,81,94,97]$$
+
+The next middle element is 81. Since $63 < 81$, we look to the left and find $[63,72]$. Then, since we're down to two elements, we can trivially select 63 after some quick comparisons. (This logic is left to you to figure out on your own. Note that no special logic would be required if there were 3 elements instead of 2 -- the parity of $|L_i|$ in iteration $i$ is important in your logic.)
+
+\begin{parts}
+
+    \part[10] Implement binary search \textbf{iteratively}.
+
+    \vspace{\stretch{1}}
+
+    \part[10] Implement binary search \textbf{recursively}.
+
+    \vspace{\stretch{1}}
+
+\end{parts}
+
+\end{questions}
+
+\end{document}
