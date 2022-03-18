@@ -3,11 +3,14 @@
 \usepackage{amsmath}
 \usepackage{framed}
 \usepackage{listings}
-\usepackage[margin=1.0in]{geometry}
+\usepackage[margin=.86in]{geometry}
+\usepackage{graphicx}
 \usepackage{xcolor}
 \definecolor{darkgreen}{RGB}{27, 117, 22}
-\header{CS XXXX}{Practice Final Exam}{NetID: \_\_\_\_\_\_\_\_}
+\header{CS XXXX}{Final Exam}{NetID: \_\_\_\_\_\_\_\_}
 \footer{Prof. Ben Rosenberg}{\thepage}{\today}
+
+\def\c#1{\texttt{#1}}
 
 \lstdefinestyle{mystyle}{  
     commentstyle=\color{gray},
@@ -26,6 +29,40 @@
     showtabs=false,                  
     tabsize=2,
     frame=single
+}
+
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    % basicstyle=\normalfont\ttfamily,
+    % numbers=left,
+    % numberstyle=\scriptsize,
+    % stepnumber=1,
+    % numbersep=8pt,
+    % showstringspaces=false,
+    % breaklines=true,
+    % frame=lines,
+    % backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
 }
 
 \lstset{language=Python, style=mystyle}
@@ -50,102 +87,130 @@ for an answer, continue on the back of the page.}}}
 \makebox[0.60\textwidth]{Section:\enspace\hrulefill}
 \end{center}
 
-\vspace{\stretch{0.5}}
+\newpage
 
 \begin{questions}
 
-\question \textbf{Survey}
+\question[69] \textbf{Pushdown Automata} 
 
-\begin{parts}
+A point breakdown for this question is as follows:
+\begin{center} \boxed{
+\begin{tabular}{|l|c|}
+    \hline
+    Functionality & Point value \\ 
+    \hline 
+    Quitting & 2 \\
+    Final and start states & 3 \\
+    Removing states & 3 \\
+    Prompts for initial creation of NDPA & 4 \\
+    Adding states & 4 \\
+    Removing transitions & 4 \\
+    User interface quality & 5 \\
+    Display of NDPA after each change & 5 \\
+    Adding transitions & 10 \\
+    Underlying NDPA structure & 14 \\
+    Testing custom strings & 15 \\
+    \hline 
+    Total & 69 \\
+    \hline
+\end{tabular}
+} \end{center}
 
-    \part[1] What was your favorite part of the class?
+Preliminary definitions: 
+\begin{itemize}
+    \item $\varepsilon$ is the empty string. It contains no characters and has length $0$.
+    \item The $\circ$ symbol is what is known as the string concatenation operator. For example, $a \circ b = ab$.
+    \item The $*$ symbol is what is known as the Kleene star. It is a unary operation defined as follows: $$\begin{aligned}
+        &A^0 = \{\varepsilon\} \\
+        &A^1 = A \\
+        &A^{i + 1} = \{w\circ v : w\in V^i \land v\in V\} \quad \forall i \geq 1 \\
+        &A^* = \bigcup_{i\geq 0} V^i
+    \end{aligned}$$ 
+    Note that $A^*$, for set of strings $A$, is necessarily a (countably) infinite set of finite-length strings.
+\end{itemize}
 
-    \vspace{\stretch{0.3}}
+A \textbf{nondeterministic pushdown automaton} (NPDA) is a 7-tuple $$M = (Q, \Sigma, \Gamma, \delta, s, \perp, F),$$ where
 
-    \part[1] What was your least favorite part of the class?
+\begin{itemize}
+    \item $Q$ is a finite set (the \emph{states}),
+    \item $\Sigma$ is a finite set (the \emph{input alphabet}),
+    \item $\Gamma$ is a finite set (the \emph{stack alphabet}),
+    \item $\delta \subseteq (Q\times (\Sigma \cup \{\varepsilon\} \times \Gamma) \times (Q\times \Gamma^*))$ is a finite \emph{transition relation},
+    \item $s\in Q$ (the \emph{start state}),
+    \item $\perp \in \Gamma$ (the \emph{initial stack symbol}), and 
+    \item $F \subseteq Q$ (the \emph{final} or \emph{accept states}).
+\end{itemize}
 
-    \vspace{\stretch{0.3}}
+If $$((p, a, A), (q, B_1 B_2 \cdots B_k)) \in \delta,$$ this means intuitively that whenever the machine is in state $p$ reading input symbol $a$ on the input tape and $A$ is on top of the stack, the NDPA can pop $A$ off the stack, push $B_1 B_2 \cdots B_k$ onto the stack ($B_k$ first and $B_1$ last), move its read head right one cell past the $a$, and enter state $q$. 
 
-    \part[1] What would you do to improve the class for future semesters?
+We define \emph{acceptance} of a string by a given NPDA in one of two ways. Either the NPDA accepts by \emph{final state} (i.e., it accepts if, when it has finished reading a string, the current state of the machine is a final state), or by empty stack (i.e., if at any time during the evaluation of the string, the stack is emptied via pop operations). For this question, take all NPDAs to accept by final state rather than empty stack.
 
-    \vspace{\stretch{0.3}}
+\textbf{Your task}: Implement a CLI for creation of NPDAs in Python. Your CLI should ask the user for their desired input alphabet, stack alphabet, and initial stack symbol, and should allow users to add and remove states and transitions, as well as declare states to be start states and/or final states. Finally, the user should be able to check their NPDA against a string to see whether it accepts it.
 
-\end{parts}
-
-\newpage
-
-\question \textbf{Short answer}
-
-\begin{parts}
-
-    \part[3] Describe list comprehension, in terms of functional tools. For what tool is list comprehension syntactical sugar?
-
-    \vspace{\stretch{0.5}}
-
-    \part[3] Describe the way that \verb+reduce+ works. What specific kind of function does it take as a parameter?
-
-    \vspace{\stretch{0.5}}
-    
-\end{parts}
-
-\question \textbf{One-liners}
-
-\begin{parts}
-    \part[3] Using \verb+reduce+, write a one-line function to concatenate a given nested list $L$ of depth 1 into a single list and store it in the variable $C$. (Example nested list of depth 1: $[[1,2],[3,4],[5,6]]$)
-    
-    \vspace{\stretch{0.5}}
-
-    \part[6] Write one line of code that prints out a list of the first 100 \emph{odd} squares.
-
-    \vspace{\stretch{0.5}}
-
-    \part[6] Recall that the cumulative sums of a list $L$ is another list $L_\text{cumulative}$ of length $|L|$, defined index-wise as follows: $$L_\text{cumulative}[i] = \sum_{j=0}^i L[j]$$
-    
-    Let the list from part (a) be denoted $L_a$. Write one line of code that prints out the cumulative sums of the list from part (b).
-
-    \vspace{\stretch{0.5}}
-
-\end{parts}
-
-\newpage
-
-\question[10] Recall from the previous practice exam the Fibonacci numbers, defined recursively as follows: $$F_n = \begin{cases} F_{n-1} + F_{n-2} & n \geq 2 \\ 1 & n = 1 \\ 0 & n = 0 \end{cases}$$
-
-Using only \textbf{recursion}, write an \textbf{\emph{efficient}} function to calculate the $n^\text{th}$ Fibonacci number. The function header (not necessarily the first line of code) is written for you.
+An example session in your CLI should look something like this:
 
 \begin{verbatim}
+Welcome to the NPDA creation CLI.
+
+Please enter an input alphabet, as lowercase characters separated by spaces
+(the empty string is denoted as `e' internally, so don't use that!):
+> a b
+Please enter a stack alphabet, as uppercase characters separated by spaces:
+> A B C
+Please choose an initial stack symbol from those you gave above:
+> C
+
+Enter a command of the following form: 
+[add/remove/[test string]/quit] 
+    [[state name [start] [final]]/[transition in-state out-state on-char]]
+> add state A start final
+You have added a state: A
+Your NPDA now looks like this:
+
+Q = { A }
+Sigma = { a b }
+Gamma = { A B C }
+delta = { }
+s = A
+stack-final = C
+state-final = A
+
+Enter a command of the following form: 
+[add/remove/[test string]/quit] 
+    [[state name [start] [final]]/[transition in-state out-state on-char]]
+> test aa
+
+Testing...
+Your string is accepted by the NPDA!
+
+Enter a command of the following form: 
+[add/remove/[test string]/quit] 
+    [[state name [start] [final]]/[transition in-state out-state out-stack on-char on-stack]]
+> add transition A A a e C
+You have added a transition: A -- a,C --> A,e
+Your NPDA now looks like this:
+
+Q = { A }
+Sigma = { a b }
+Gamma = { A B C }
+delta = { (A (a C) -> (A e)) }
+s = A
+stack-final = C
+state-final = A
 
 
-
-
-def fib(n):
+Enter a command of the following form: 
+[add/remove/[test string]/quit] 
+    [[state name [start] [final]]/[transition in-state out-state on-char]]
+> quit
+Quitting.
 \end{verbatim}
 
-\vspace{\stretch{1}}
+Your implementation should use Python's \texttt{input} function, in conjunction with \texttt{print}. You will likely want to use some scrap paper for this question.
 
-\question[15] Write code for a generator that yields only the squares of the Fibonacci numbers divisible by 3.
-
-\vspace{\stretch{1}}
+Good luck!
 
 \newpage
-
-\question \textbf{Binary search} is a method of finding a certain element in a sorted list $L$. In binary search, you repeatedly divide the list in two and then determine which side the target element lies on. After partitioning $L$ in half for $\log(|L|)$ times, the target element is found. 
-
-Consider the following list: $$L = [1,2,4,7,10,15,63,72,81,94,97]$$ Say we have target element 63. First, we find the center element of 15. Since $63 > 15$, we continue on the right side: $$[63,72,81,94,97]$$
-
-The next middle element is 81. Since $63 < 81$, we look to the left and find $[63,72]$. Then, since we're down to two elements, we can trivially select 63 after some quick comparisons. (This logic is left to you to figure out on your own. Note that no special logic would be required if there were 3 elements instead of 2 -- the parity of $|L_i|$ in iteration $i$ is important in your logic.)
-
-\begin{parts}
-
-    \part[10] Implement binary search \textbf{iteratively}.
-
-    \vspace{\stretch{1}}
-
-    \part[10] Implement binary search \textbf{recursively}.
-
-    \vspace{\stretch{1}}
-
-\end{parts}
 
 \end{questions}
 

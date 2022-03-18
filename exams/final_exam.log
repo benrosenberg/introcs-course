@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.17)  18 MAR 2022 08:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.17)  18 MAR 2022 19:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/xethr/GitHub/introcs-course/exams/exam_1.tex
-(c:/Users/xethr/GitHub/introcs-course/exams/exam_1.tex
+**c:/Users/xethr/GitHub/introcs-course/exams/final_exam.tex
+(c:/Users/xethr/GitHub/introcs-course/exams/final_exam.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18> (c:/texlive/2020/texmf-dist/tex/latex/exam/exam.cls
 Document Class: exam 2021/02/26 Version 2.7 by Philip Hirschhorn
@@ -243,8 +243,8 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 File: l3backend-pdftex.def 2021-03-02 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count317
 \l__pdf_internal_box=\box52
-) (c:/Users/xethr/GitHub/introcs-course/exams/exam_1.aux)
-\openout1 = `exam_1.aux'.
+) (c:/Users/xethr/GitHub/introcs-course/exams/final_exam.aux)
+\openout1 = `final_exam.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
 LaTeX Font Info:    ... okay on input line 70.
@@ -270,15 +270,15 @@ LaTeX Font Info:    ... okay on input line 70.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
-* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* h-part:(L,W,R)=(62.15224pt, 489.99052pt, 62.15224pt)
+* v-part:(T,H,B)=(62.15224pt, 670.66551pt, 62.15224pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
-* \textwidth=469.75502pt
-* \textheight=650.43001pt
-* \oddsidemargin=0.0pt
-* \evensidemargin=0.0pt
-* \topmargin=-30.0pt
+* \textwidth=489.99052pt
+* \textheight=670.66551pt
+* \oddsidemargin=-10.11775pt
+* \evensidemargin=-10.11775pt
+* \topmargin=-40.11775pt
 * \headheight=15.0pt
 * \headsep=15.0pt
 * \topskip=10.0pt
@@ -317,42 +317,28 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 )) [1{c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ] [2]
-LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 111.
-LaTeX Font Info:    No file OMScmtt.fd. on input line 111.
+Overfull \hbox (16.03304pt too wide) in paragraph at lines 207--207
+ []    \OT1/cmtt/m/n/10 [[state name [start] [final]]/[transition in-state out-state out-stack on-char on-stack]][] 
+ []
 
-
-LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 111.
-
-[3]
-<heap-graph.png, id=27, 315.42844pt x 216.81pt>
-File: heap-graph.png Graphic file (type png)
-<use heap-graph.png>
-Package pdftex.def Info: heap-graph.png  used on input line 161.
-(pdftex.def)             Requested size: 281.85587pt x 193.74434pt.
- [4 <c:/Users/xethr/GitHub/introcs-course/exams/heap-graph.png>] [5] [6]
-This exam contains 3 questions with 8 parts, 0 subparts, and 0 subsubparts.
+[3] [4]
+This exam contains 1 questions with 0 parts, 0 subparts, and 0 subsubparts.
 This exam has a total of 69 points.
 This exam has a total of 0 bonus points.
-(c:/Users/xethr/GitHub/introcs-course/exams/exam_1.aux)
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
- ) 
+(c:/Users/xethr/GitHub/introcs-course/exams/final_exam.aux) ) 
 Here is how much of TeX's memory you used:
- 5676 strings out of 479014
- 77000 string characters out of 5863086
- 699141 words of memory out of 5000000
- 23128 multiletter control sequences out of 15000+600000
- 407818 words of font info for 44 fonts, out of 8000000 for 9000
+ 5312 strings out of 479014
+ 73837 string characters out of 5863086
+ 594157 words of memory out of 5000000
+ 22776 multiletter control sequences out of 15000+600000
+ 405041 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,11n,74p,638b,1479s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on c:/Users/xethr/GitHub/introcs-course/exams/exam_1.pdf (6 pages, 187033 bytes).
+ 68i,12n,74p,513b,448s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on c:/Users/xethr/GitHub/introcs-course/exams/final_exam.pdf (4 pages, 128003 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
- 67 compressed objects within 1 object stream
+ 62 PDF objects out of 1000 (max. 8388607)
+ 44 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
