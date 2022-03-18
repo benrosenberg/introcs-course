@@ -1,0 +1,24 @@
+graph heap {
+node [shape=box];
+ratio=.68;
+ranksep=0;
+rank=source;
+ordering=out;
+    p1 [label="2"];
+    p2_1 [label="3"];
+    p2_2 [label="6"];
+    p3_1_1 [label="4"];
+    p3_1_2 [label="5"];
+    p3_2_1 [label="8"];
+    p3_2_2 [label="10"];
+    p4_1_1_1 [label="7"];
+    p4_1_1_2 [label="11"];
+    p1 -- p2_1;
+    p1 -- p2_2;
+    p2_1 -- p3_1_1;
+    p2_1 -- p3_1_2;
+    p2_2 -- p3_2_1;
+    p2_2 -- p3_2_2;
+    p3_1_1 -- p4_1_1_1;
+    p3_1_1 -- p4_1_1_2;
+}

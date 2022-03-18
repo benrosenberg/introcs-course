@@ -1,0 +1,230 @@
+\documentclass[addpoints]{exam}
+
+\usepackage{amsmath}
+\usepackage{framed}
+\usepackage{listings}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\definecolor{darkgreen}{RGB}{27, 117, 22}
+\header{CS XXXX}{Exam 1}{NetID: \_\_\_\_\_\_\_\_}
+\footer{Prof. Ben Rosenberg}{\thepage}{\today}
+
+\def\c#1{\texttt{#1}}
+
+\lstdefinestyle{mystyle}{  
+    commentstyle=\color{gray},
+    keywordstyle=\bfseries\color{red},
+    numberstyle=\tiny\color{gray},
+    stringstyle=\color{darkgreen},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    frame=single
+}
+
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    % basicstyle=\normalfont\ttfamily,
+    % numbers=left,
+    % numberstyle=\scriptsize,
+    % stepnumber=1,
+    % numbersep=8pt,
+    % showstringspaces=false,
+    % breaklines=true,
+    % frame=lines,
+    % backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+
+\lstset{language=Python, style=mystyle}
+
+\begin{document}
+
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering
+Answer the questions in the spaces provided. If you run out of room
+for an answer, continue on the back of the page.}}}
+\end{center}
+
+\begin{center}
+    \fbox{\gradetable[v][questions]}
+\end{center}
+    
+\begin{center}
+\vspace{5mm}
+\makebox[0.60\textwidth]{Name:\enspace\hrulefill}
+
+\vspace{5mm}
+\makebox[0.60\textwidth]{Section:\enspace\hrulefill}
+\end{center}
+
+\newpage
+
+\begin{questions}
+
+\question[15] \textbf{Fast exponentiation}: Repeated exponentiation of numbers is frequently required in cryptography, where large numbers are used to ensure security. But when working with really large numbers, runtime can start to be a concern. The need for quick ways to compute large exponents of numbers were thus required, which emerged in the form of \emph{fast exponentiation algorithms}. 
+
+One such algorithm takes advantage of the fact that $a^{2^n} = a^{2^{2^{n/2}}}$ to reduce the number of times one needs to multiply $a$ by itself to obtain $a^{2^n}$. The process for this algorithm is simple, for the computation of $m^e$:
+
+\begin{itemize}
+    \item Obtain a shortest binary representation $e_2 = b_k b_{k-1} \dots b_0$ for $e$, where $b_i \in \{0,1\}$ for all $i \in [0..k]$ and $b_k = 1$.
+    \item Compute $m^{2^k}$ by repeated squaring.
+    \item Compute $m^e = \prod_{i : b_i = 1} m^{2^i}$. 
+\end{itemize} 
+
+Implement this algorithm in Python.
+
+\newpage
+
+\question[20] \textbf{LISP, JSON, and arithmetic}: Suppose you want to parse a mathematical expression in a LISP-like syntax from a JSON string. An example JSON assignment to JavaScript variable \texttt{x} might be as follows:
+
+\begin{lstlisting}[language=json,firstnumber=1]
+x = { expr : [ 
+    delimiter : "(",
+    operator : "+"
+    delimiter : "(",
+    operator : "-",
+    value : "3", 
+    value : "4",
+    delimiter : ")",
+    delimiter : "(",
+    operator : "*",
+    value : "7",
+    value : "5",
+    delimiter : ")",
+    delimiter : ")",
+] }
+\end{lstlisting}
+
+This would turn into the following LISP syntax, once parsed correctly:
+
+\begin{lstlisting}[language=json]
+(+ (- 3 4) (* 7 5))
+\end{lstlisting}
+
+This will evaluate to \texttt{(+ (-1) (35))} which is \texttt{34}. 
+
+Your task is to write code that, given some Python variable \texttt{x} which holds some string representing a JSON of the above form (containing \texttt{delimiter}s, \texttt{operator}s, and \texttt{value}s), prints the result of computing the expression represented therein. In the above example, given \texttt{x = `\{ expr : [...] \}'}, your code should return \texttt{34}.
+
+The first line of code is written for you. The \texttt{`...'} for \texttt{x} is meant to represent a general string of the form described above. Your code should end in a \texttt{print} statement.
+
+You \underline{\textbf{may not use}} Python's \c{JSON} module. You should parse the string manually.
+
+(\emph{Hint:} You may want to use the \emph{stack} data structure, which functions exactly as it sounds. You can implement it with a Python \texttt{list}, using the \texttt{append} and \texttt{pop} operators.)
+
+\begin{verbatim}
+x = `...'
+\end{verbatim}
+
+\newpage
+
+\question (34 points total) \textbf{Heaps} 
+
+A \textbf{heap} is a data structure frequently used in implementations of \emph{priority queues}, as it has the convenient property of always being partially ordered\footnote{This is technically incorrect if we use the mathematical definition of a (weak) partial order as a relation which is reflexive, antisymmetric, and transitive; heaps are simply ``ordered to some degree but not completely''.}. In this question we will consider \textbf{binary heaps}, which are a kind of \emph{binary tree}. Heaps obey the \emph{heap property}, which is as follows:
+
+\begin{quote}
+    If a heap is a \emph{min}-heap, then for all child nodes $c$ of some parent node $p$, the value of $c$ is \emph{greater than} that of $p$. If a heap is a \emph{max}-heap, then for all child nodes $c$ of some parent node $p$, the value of $c$ is \emph{less than} that of $p$. This ensures that the root node is the minimum or maximum respectively of the set containing itself and both of its children.
+\end{quote}
+
+An example binary min-heap might be as follows:
+
+\begin{center}
+\includegraphics[width=0.6\columnwidth]{"heap-graph.png"}
+\end{center}
+
+If we need to access the lowest element in the above heap, we can simply pop off the top element. Convenient! But how do we create a heap? It's not so great if we need to put everything in manually. 
+
+That's why heaps come with a set of common operations. These include:
+
+\begin{itemize}
+    \item \texttt{peek}: Returns the root element of the heap.
+    \item \texttt{pop}: Removes and then returns the root element of the heap.
+    \item \texttt{create-heap}: Creates an empty heap.
+    \item \texttt{heapify}: Turns a binary tree into a heap.
+    \item \texttt{size}: Returns the size of the heap.
+\end{itemize}
+
+Rather than working with a set of nodes and whatnot, we can also use an array data structure, in which the children of parent node at index $p$ are at indices $c_1 = 2p+1$ and $c_2 = 2p + 2$ respectively. The above heap would be represented by the following array: 
+$$\texttt{[2, 3, 6, 4, 5, 8, 10, 7, 11]}$$
+
+For each of the first five of the following parts (part (a) through part (e)) your task will be to implement one of the above operations. You should use the array data structure for the heap as defined above, and should consider an array to be a Python \texttt{list}. 
+
+\newpage
+
+\begin{parts}
+    \part[2] Implement \texttt{peek}.
+
+    \vspace{\stretch{1}}
+
+    \part[4] Implement \texttt{size}.
+
+    \vspace{\stretch{1.5}}
+
+    \part[2] Implement \texttt{create-heap}.
+
+    \vspace{\stretch{1}}
+
+    \part[6] Implement \texttt{heapify}.
+
+    \vspace{\stretch{3}}
+
+    \part[3] Implement \texttt{pop}.
+
+    \vspace{\stretch{1}}
+
+\newpage
+
+    \part[4] List the Big-O complexities of each of the above operations.
+
+    \vspace{\stretch{1}}
+
+    \part[12] \textbf{Heapsort}: You may have noticed that the array given for the example above is very close to completely sorted. In fact, heaps \emph{can} be used to sort data! Implement an algorithm, \emph{heapsort}, that uses a heap to sort an array of integers from smallest to largest. Your algorithm should have the following performance metrics:
+
+    \begin{itemize}
+        \item Worst-case performance: $O(n\log n)$
+        \item Best-case performance\footnote{Assume that the keys for the heap are all unique.}: $O(n\log n)$
+        \item Average case performance (this follows from the first two): $O(n\log n)$
+    \end{itemize}
+
+    \vspace{\stretch{4}}
+
+    \part[1] Why might someone choose to use heapsort over another sorting algorithm, such as quicksort or mergesort?
+
+    \vspace{\stretch{1}}
+
+\end{parts}
+
+\newpage
+
+\end{questions}
+
+\end{document}
