@@ -41,7 +41,7 @@
 <input type="checkbox" disabled> assignments
 </li>
 <li>
-<input type="checkbox" checked disabled> exams
+<input type="checkbox" disabled> exams
 </li>
 <li>
 <input type="checkbox" disabled> lecture notes
