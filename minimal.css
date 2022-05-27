@@ -130,7 +130,9 @@ body {
   }
 
   table,
-  tr {
+  tr,
+  td,
+  th {
     border: 1px solid #b3a688;
     border-collapse: collapse;
   }
