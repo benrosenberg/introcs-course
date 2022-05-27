@@ -19,9 +19,15 @@ body {
     filter: invert(95%) brightness(3.5);
   }
   table,
-  tr {
+  tr,
+  td,
+  th {
     border: 1px solid black;
     border-collapse: collapse;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    padding-top: 5px;
   }
   th {
     text-align: center;
